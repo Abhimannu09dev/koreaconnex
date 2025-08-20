@@ -3,6 +3,7 @@
 import { Bell, CircleQuestionMark, MessageSquare, User } from "lucide-react";
 import PersonalInformatiin from "@/app/component/Profile Form/personalInformation";
 import Address from "./Profile Form/address";
+import EducationalInformation from "./Profile Form/educationalInformation";
 
 export default function ProfileSetup(){
     return(
@@ -33,7 +34,8 @@ export default function ProfileSetup(){
                     <main className="py-6 w-full flex justify-center">
                         <div className="bg-gray-100 p-4 m-10 rounded-xl">
                             {/* <PersonalInformatiin /> */}
-                            <Address />
+                            {/* <Address /> */}
+                            <EducationalInformation />
                         </div>
                     </main>
                 </div>                
