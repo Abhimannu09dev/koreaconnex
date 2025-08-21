@@ -3,6 +3,7 @@
 export default function Address() {
   return (
     <>
+    <section className="h-full">
       <h2>Address & Contact</h2>
       <p className="text-[#929292]">How can we reach you?</p>
       <form className="mt-4">
@@ -157,6 +158,7 @@ export default function Address() {
           </button>
         </div>
       </form>
+    </section>
     </>
   );
 }

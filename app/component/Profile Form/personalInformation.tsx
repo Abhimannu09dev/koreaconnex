@@ -3,6 +3,7 @@
 export default function PersonalInformation() {
     return (
         <>
+        <section className="h-full">
             <h2>Personal Information</h2>
             <p className="text-[#929292]">Tell us about yourself</p>
             <form className="mt-4">
@@ -27,12 +28,14 @@ export default function PersonalInformation() {
                 />
             </div>
             <div className="flex flex-col">
-                <label htmlFor="lastName" className="text-[#929292]">Last Name</label>
+                <label htmlFor="dob" className="text-[#929292]">Date of Birth</label>
                 <input
-                type="text"
-                id="lastName"
-                placeholder="Please enter your last name"
-                className="bg-white rounded-lg h-10 p-4 border border-gray-300 placeholder-[#929292]"
+                type="date"
+                id="dob"
+                className="bg-white rounded-lg h-10 p-4 border border-gray-300 text-[#929292]"
+                onFocus={(e) => e.target.type = 'date'}
+                onBlur={(e) => !e.target.value && (e.target.type = 'text')}
+                placeholder="2000/01/02"
                 />
             </div>
 
@@ -117,6 +120,7 @@ export default function PersonalInformation() {
             </button>
             </div>
         </form>
+    </section>
     </>
   );
 }

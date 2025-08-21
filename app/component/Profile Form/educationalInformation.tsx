@@ -3,6 +3,7 @@
 export default function EducationalInformation() {
   return (
     <>
+    <section className="h-full">
       <h2>Education Background</h2>
       <p className="text-[#929292]">Your academic journey so far</p>
       <form className="mt-4">
@@ -291,6 +292,7 @@ export default function EducationalInformation() {
           </button>
         </div>
       </form>
+    </section>
     </>
   );
 }
