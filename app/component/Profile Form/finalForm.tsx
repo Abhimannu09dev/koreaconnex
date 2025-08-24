@@ -1,83 +1,107 @@
 "use client";
 
-export default function finalForm() {
+import { Button } from "antd";
+import { FormStepProps } from "../profileSetupDashboard";
+
+const FinalForm: React.FC<FormStepProps> = ({
+  handlePrevious,
+}) => {
   return (
     <>
-      <h2>Visa History & Finalize</h2>
-      <p className="text-[#929292]">Almost done!</p>
-      <form className="mt-4 text-[#929292]">        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* First Row */}
-            <div className="flex flex-col">
-                <label className="text-[#929292]">Have you ever been denied a visa to South Korea?</label>
-                <div className="flex gap-4">
-                <label className="text-[#929292]">
-                    <input type="radio" name="beenKorea" id="yesKorea" className="mr-2" />
-                    Yes
-                </label>
-                <label className="text-[#929292]">
-                    <input type="radio" name="beenKorea" id="noKorea"  className="mr-2" />
-                    No
-                </label>
+        {/* Actual */}
+        <section className="bg-[#F1F1F1] p-10 rounded-xl">
+            <h2 className="font-semibold text-xl">Visa History & Finalize</h2>
+            <p style={{color: "var(--color-grayish)"}}>Almost done!</p>
+            <form className="mt-10">        
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* First Row */}
+                <div className="flex flex-col">
+                    <label style={{color:"var(--color-grayish)"}}>Have you ever been denied a visa to South Korea?</label>
+                    <div className="flex gap-4">
+                    <label style={{color:"var(--color-grayish)"}}>
+                        <input type="radio" name="beenKorea" id="yesKorea" className="mr-2" />
+                        Yes
+                    </label>
+                    <label style={{color:"var(--color-grayish)"}}>
+                        <input type="radio" name="beenKorea" id="noKorea"  className="mr-2" />
+                        No
+                    </label>
+                    </div>
+                </div>
+                <div className="flex flex-col">
+                    <label htmlFor="visatype" style={{color:"var(--color-grayish)"}}>Visa Type</label>
+                    <input
+                    type="text"
+                    id="visatype"
+                    placeholder="--Select Visa Type--"
+                    className="bg-white rounded-lg h-13 p-4 border border-gray-300 placeholder-[#929292]"
+                    />
+                </div>
+                    
+                {/* Second Row */}
+                <div className="flex flex-col">
+                    <label htmlFor="appliedYear" style={{color:"var(--color-grayish)"}}>Application Year</label>
+                    <input
+                        type="text"
+                        id="appliedYear"
+                        placeholder="e.g. 2022"
+                        className="bg-white rounded-lg h-13 p-4 border border-gray-300 placeholder-[#929292]"
+                    />
+                </div>
+
+                <div className="flex flex-col">
+                    <label htmlFor="denialReason" style={{color:"var(--color-grayish)"}}>Reason for Denial</label>
+                    <input
+                        type="text"
+                        id="denialReason"
+                        placeholder="--Select a Reason--"
+                        className="bg-white rounded-lg h-13 p-4 border border-gray-300 placeholder-[#929292]"
+                    />
                 </div>
             </div>
-            <div className="flex flex-col">
-                <label htmlFor="visatype" >Visa Type</label>
-                <input
-                type="text"
-                id="visatype"
-                placeholder="--Select Visa Type--"
-                className="bg-white rounded-lg h-10 p-4 border border-gray-300 placeholder-[#929292]"
-                />
+            {/* Third row */}
+            <div className="flex flex-col mt-4">
+                <label htmlFor="additionalNotes" style={{color:"var(--color-grayish)"}}>Additional Notes (optional)</label>
+                <textarea 
+                    name="additionalNotes" 
+                    id="additionalNotes" 
+                    cols={30} 
+                    rows={5} 
+                    className="bg-white rounded-lg p-4 border border-gray-300 placeholder-[#929292]" 
+                    placeholder="e.g. Rejected due to missing financial documents"/>
             </div>
-                
-            {/* Second Row */}
-            <div className="flex flex-col">
-                <label htmlFor="denialReason" >Reason for Denial</label>
-                <input
-                    type="text"
-                    id="denialReason"
-                    placeholder="--Select a Reason--"
-                    className="bg-white rounded-lg h-10 p-4 border border-gray-300 placeholder-[#929292]"
-                />
+            <div className="flex justify-between"> 
+                <Button 
+                    onClick={handlePrevious}
+                    type="primary"
+                    style={{
+                        backgroundColor:"var(--color-secondary-grayish)",
+                        marginTop:"1.5rem",
+                        padding:"1rem",
+                        color:"#000",
+                        borderRadius:"0.5rem",
+                        width:"10rem",
+                        height:"3rem"
+                    }}>
+                    Back
+                </Button>
+                <Button 
+                    type="primary"
+                    style={{
+                        backgroundColor:"var(--color-primary)",
+                        marginTop:"1.5rem",
+                        padding:"1rem",
+                        color:"#fff",
+                        borderRadius:"0.5rem",
+                        width:"10rem",
+                        height:"3rem"
+                    }}>
+                    Submit
+                </Button>
             </div>
-            <div className="flex flex-col">
-                <label htmlFor="appliedYear" >Application Year</label>
-                <input
-                    type="text"
-                    id="appliedYear"
-                    placeholder="e.g. 2022"
-                    className="bg-white rounded-lg h-10 p-4 border border-gray-300 placeholder-[#929292]"
-                />
-            </div>
-        </div>
-        {/* Third row */}
-        <div className="flex flex-col">
-            <label htmlFor="additionalNotes" >Additional Notes(optional)</label>
-            <textarea 
-                name="additionalNotes" 
-                id="additionalNotes" 
-                cols={30} 
-                rows={5} 
-                className="bg-white rounded-lg p-4 border border-gray-300 placeholder-[#929292]" 
-                placeholder="e.g. Rejected due to missing financial documents"/>
-        </div>
-        <div className="flex justify-between">
-            <button
-                type="submit"
-                className="mt-6 w-24 p-4 bg-[#E7E7E7] text-black rounded-xl"
-            >
-                Back
-            </button>
-            <button
-                type="submit"
-                className="mt-6 w-24 p-4 bg-[#29935C] text-white rounded-xl"
-            >
-                Next
-            </button>
-        </div>
-      </form>
-      
+        </form>
+      </section>
     </>
   );
 }
+export default FinalForm;
