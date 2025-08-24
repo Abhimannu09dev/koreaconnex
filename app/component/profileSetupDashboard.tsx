@@ -6,6 +6,7 @@ import Address from "./Profile Form/address";
 import EducationalInformation from "./Profile Form/educationalInformation";
 import TestScore from "./Profile Form/testScore";
 import FinalForm from "./Profile Form/finalForm";
+import SetupComplete from "./Profile Form/setupComplete"
 import { useState } from "react";
 import { Dispatch, SetStateAction } from "react";
 
@@ -21,11 +22,12 @@ export default function ProfileSetup() {
   const [step, setStep] = useState(1);
 
   const navItems = [
-    { id: 1, label: "Personal Information", icon: User },
-    { id: 2, label: "Address and Contact", icon: Home },
-    { id: 3, label: "Educational Background", icon: GraduationCap },
-    { id: 4, label: "English Proficiency Test", icon: FilesIcon },
-    { id: 5, label: "Final Submission", icon: FilesIcon },
+    { id: 1, label: "Personal Information",},
+    { id: 2, label: "Address and Contact",},
+    { id: 3, label: "Educational Background",},
+    { id: 4, label: "English Proficiency Test",},
+    { id: 5, label: "Final Submission",},
+    { id: 6, label: "Setup Complete",},
   ];
 
 const renderForm = () => {

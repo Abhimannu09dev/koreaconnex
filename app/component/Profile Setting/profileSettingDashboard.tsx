@@ -1,10 +1,10 @@
 "use client";
 
 import { Bell, CircleQuestionMark, FilesIcon, GraduationCap, Home, MessageSquare, User } from "lucide-react";
-import PersonalInformation from "@/app/component/Profile Form/personalInformation";
-import Address from "../Profile Form/address";
-import EducationalInformation from "../Profile Form/educationalInformation";
-import TestScore from "../Profile Form/testScore";
+import PersonalInformation from "./personalInformation";
+import Address from "./addressSetting";
+import EducationalInformation from "./educationSetting";
+import TestScore from "./testSetting";
 import { useState } from "react";
 
 export default function ProfileSetup() {
@@ -89,12 +89,10 @@ export default function ProfileSetup() {
               ))}
             </div>
           </div>
-          <div className="flex flex-col w-full h-screen">
             {/* Render of forms */}
             <main className="py-6 w-full flex justify-center">
               {renderForm()}
             </main>
-          </div>
         </div>
       </section>
     </section>

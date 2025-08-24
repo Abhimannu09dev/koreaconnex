@@ -3,8 +3,10 @@
 import { Button } from "antd";
 import { FormStepProps } from "../profileSetupDashboard";
 
+
 const FinalForm: React.FC<FormStepProps> = ({
   handlePrevious,
+  handleNext,
 }) => {
   return (
     <>
@@ -86,6 +88,7 @@ const FinalForm: React.FC<FormStepProps> = ({
                     Back
                 </Button>
                 <Button 
+                    onClick={handleNext}
                     type="primary"
                     style={{
                         backgroundColor:"var(--color-primary)",

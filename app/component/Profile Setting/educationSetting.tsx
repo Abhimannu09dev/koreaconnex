@@ -245,7 +245,7 @@ export default function EducationalInformation() {
           <Button 
               type="primary"
               style={{
-                  backgroundColor:"#29935C",
+                  backgroundColor:"var(--color-primary)",
                   marginTop:"1.5rem",
                   padding:"1rem",
                   color:"#fff",
